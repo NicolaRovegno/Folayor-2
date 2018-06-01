@@ -1,0 +1,35 @@
+La base del projecto
+
+import random
+weapons = ["stick","sword","mace","Legendary Sword of The Fallen Hero","stick","sword","stick","stick","sword","mace"]
+rngeesus = [1,2,3,4,5,6,7,8,9,10]
+oro = 0
+vida = 5
+inventario =[]
+print("you begin your adventure at an inn where a strange shopkeeper offers you a deal to give you a free weapon if you can beat a dungeon with it.")
+print("He hands you", end = '')
+x = (random.choice(weapons))
+inventario.append(x)
+if x == "Legendary Sword of The Fallen Hero" :
+    print('',"the",'',x,)
+else:
+    print('',"a",x,'')
+print("what do you do?")
+print("1. Ask for another one (can only be done once)")
+print("2. Farewell")
+y = int(input("input here:"))
+while y < 1 or y > 2:
+    print("invalid input, try again")
+    y = int(input("input here:"))
+print('\n'*40)                 #para "limpiar" la pantalla de abajo
+if y == 1:
+    inventario.pop(0)
+    x = (random.choice(weapons))
+    inventario.append(x)
+    print("You decide to ask for another weapon.")
+    print("The shopkeeper looks at you angrily as he hands you", end ='')
+    if x == "Legendary Sword of The Fallen Hero" :
+        print('',"the",'',x,".")
+    else:
+        print('',"a",x,".")
+print('\n'*11)                          #para qu el texto salga arriba de la consola
